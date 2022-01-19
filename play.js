@@ -10,8 +10,9 @@ const connect = () => {
   });
   conn.setEncoding('utf8');
 
-  conn.on("connect", () => {
+  conn.on("connect", (incomingData) => {
     console.log('Connected!');
+    incomingData && console.log(`Connect Message: ${incomingData}`);
   });
 
   conn.on("data", (incomingData) => {
@@ -23,3 +24,6 @@ const connect = () => {
 };
 console.log(`Connecting to ${host}:${port}`);
 connect();
+
+//Information on Events for createConnection (an instance of class net.Socket)
+// https://nodejs.org/api/net.html#class-netsocket
