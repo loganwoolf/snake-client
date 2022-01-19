@@ -10,6 +10,10 @@ const connect = (host, port) => {
   conn.on("connect", (incomingData) => {
     console.log('Connected!');
     incomingData && console.log(`Connect Message: ${incomingData}`);
+
+    conn.write("Name: L_W");
+
+
   });
 
   conn.on("data", (incomingData) => {
