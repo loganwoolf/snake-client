@@ -1,9 +1,9 @@
 const net = require('net');
 
-const connect = (host, port) => {
+const connect = () => {
   const conn = net.createConnection({
-    host,
-    port
+    host: '165.227.47.243',
+    port: 50541
   });
   conn.setEncoding('utf8');
 
@@ -21,7 +21,9 @@ const connect = (host, port) => {
     console.log(`Server Message: ${incomingData}`);
   });
 
-  return {conn, host, port};
+  return conn;
 };
+
+
 
 module.exports = {connect};

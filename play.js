@@ -1,15 +1,15 @@
 //entry point file
 
 const {connect} = require('./client');
-const {input} = require('./input');
+const { setupInput } = require('./input');
 
-const host = process.argv[2] || 'localhost';
-const port = +process.argv[3] || 8080;
+// const host = process.argv[2] || 'localhost';
+// const port = +process.argv[3] || 8080;
 
-console.log(`Connecting to ${host}:${port}`);
-connect(host, port);
+// console.log(`Connecting to ${host}:${port}`);
 
 
+setupInput(connect());
 
 
 //Information on Events for createConnection (an instance of class net.Socket)
