@@ -24,4 +24,4 @@ const connect = (host, port) => {
   return {conn, host, port};
 };
 
-module.exports = connect;
+module.exports = {connect};
